@@ -7,10 +7,8 @@
     <link rel="stylesheet" href="./../css/style.css" />
 </head>
 <body>
-    <h1>Working Working-Calculator</h1>
-
     <div class="calculator">
-        <input type="text" class="black-screen" />
+        <input type="text" id="input" class="black-screen" />
         <div class="design">
             <button class="btn-home-cal cal-b">
                 <img src="https://img.icons8.com/?size=1x&id=i6fZC6wuprSu&format=png" class="img-home" />
@@ -27,54 +25,75 @@
         </div>
         </br>
         <div class="button-home">
-            <button class="btn-home-cal">Mode</button>
-            <button class="btn-home-cal">Apps</button>
-            <button class="btn-home-cal">Shift</button>
-            <button class="btn-home-cal">OK</button>
-            <button class="btn-home-cal">Solve</button>
-            <button class="btn-home-cal">Var</button>
+            <button class="btn-home-cal" onclick="keypress('Mode')">Mode</button>
+            <button class="btn-home-cal" onclick="keypress('Apps')">Apps</button>
+            <button class="btn-home-cal" onclick="keypress('Shift')">Shift</button>
+            <button class="btn-home-cal" onclick="keypress('OK')">OK</button>
+            <button class="btn-home-cal" onclick="keypress('Solve')">Solve</button>
+            <button class="btn-home-cal" onclick="keypress('Var')">Var</button>
         </div>
         <div class="button-home">
-            <button class="btn-home-cal">Del</button>
-            <button class="btn-home-cal">Clr</button>
-            <button class="btn-home-cal">sin</button>
-            <button class="btn-home-cal">cos</button>
-            <button class="btn-home-cal">tan</button>
-            <button class="btn-home-cal">In</button>
+            <button class="btn-home-cal" onclick="keypress('Del')">Del</button>
+            <button class="btn-home-cal" onclick="clear('Clear')">Clear</button>
+            <button class="btn-home-cal" onclick="keypress('sin')">sin</button>
+            <button class="btn-home-cal" onclick="keypress('cos')">cos</button>
+            <button class="btn-home-cal" onclick="keypress('tan')">tan</button>
+            <button class="btn-home-cal" onclick="keypress('In')">In</button>
         </div>
         <div class="button-home">
-            <button class="btn-home-cal">x,n,t</button>
-            <button class="btn-home-cal">x2</button>
-            <button class="btn-home-cal">Ans</button>
-            <button class="btn-home-cal">Exp</button>
-            <button class="btn-home-cal">Aps</button>
-            <button class="btn-home-cal">M+</button>
+            <button class="btn-home-cal" onclick="keypress('x,n,t')">x,n,t</button>
+            <button class="btn-home-cal" onclick="keypress('x2')">x2</button>
+            <button class="btn-home-cal" onclick="keypress('Ans')">Ans</button>
+            <button class="btn-home-cal" onclick="keypress('Exp')">Exp</button>
+            <button class="btn-home-cal" onclick="keypress('Aps')">Aps</button>
+            <button class="btn-home-cal" onclick="keypress('M+')">M+</button>
         </div>
         <div class="button-home">
-            <button class="btn-home-cal">fax</button>
-            <button class="btn-home-cal">hyp</button>
-            <button class="btn-home-cal">{}</button>
-            <button class="btn-home-cal">[]</button>
-            <button class="btn-home-cal">Rec</button>
-            <button class="btn-home-cal">Pol</button>
+            <button class="btn-home-cal" onclick="keypress('fax')">fax</button>
+            <button class="btn-home-cal" onclick="keypress('hyp')">hyp</button>
+            <button class="btn-home-cal" onclick="keypress('=')">=</button>
+            <button class="btn-home-cal" onclick="keypress('[]')">[]</button>
+            <button class="btn-home-cal" onclick="keypress('Rec')">Rec</button>
+            <button class="btn-home-cal" onclick="keypress('Pol')">Pol</button>
         </div>
         <div class="button-home">
-            <button class="btn-home-cal">0</button>
-            <button class="btn-home-cal">9</button>
-            <button class="btn-home-cal">8</button>
-            <button class="btn-home-cal">7</button>
-            <button class="btn-home-cal">6</button>
-            <button class="btn-home-cal">5</button>
+            <button class="btn-home-cal" onclick="keypress('0')">0</button>
+            <button class="btn-home-cal" onclick="keypress('9')">9</button>
+            <button class="btn-home-cal" onclick="keypress('8')">8</button>
+            <button class="btn-home-cal" onclick="keypress('7')">7</button>
+            <button class="btn-home-cal" onclick="keypress('6')">6</button>
+            <button class="btn-home-cal" onclick="keypress('5')">5</button>
         </div>
         <div class="button-home">
-            <button class="btn-home-cal">-</button>
-            <button class="btn-home-cal">++</button>
-            <button class="btn-home-cal">1</button>
-            <button class="btn-home-cal">2</button>
-            <button class="btn-home-cal">3</button>
-            <button class="btn-home-cal">4</button>
+            <button class="btn-home-cal" onclick="keypress('-')">-</button>
+            <button class="btn-home-cal" onclick="keypress('+')">+</button>
+            <button class="btn-home-cal" onclick="keypress('1')">1</button>
+            <button class="btn-home-cal" onclick="keypress('2')">2</button>
+            <button class="btn-home-cal" onclick="keypress('3')">3</button>
+            <button class="btn-home-cal" onclick="keypress('4')">4</button>
         </div>
     </div>
+    
+
+    <script>
+        function keypress(key)
+        {
+            const screen = document.getElementById('input');
+            if(key== '=')
+            {
+                screen.value = eval(screen.value);
+            }
+            else{
+                screen.value += key;
+            }
+        }
+
+        function clear()
+        {
+            const screen = document.getElementById('input');
+            screen.value = '';
+        }
+    </script>
     
 </body>
 </html>
