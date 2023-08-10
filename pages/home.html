@@ -34,7 +34,7 @@
         </div>
         <div class="button-home">
             <button class="btn-home-cal" onclick="keypress('Del')">Del</button>
-            <button class="btn-home-cal" onclick="clear('Clear')">Clear</button>
+            <button class="btn-home-cal" onclick="clear('clear')">Clear</button>
             <button class="btn-home-cal" onclick="keypress('sin')">sin</button>
             <button class="btn-home-cal" onclick="keypress('cos')">cos</button>
             <button class="btn-home-cal" onclick="keypress('tan')">tan</button>
@@ -83,16 +83,20 @@
             {
                 screen.value = eval(screen.value);
             }
+            else if(key == 'clear')
+            {
+                screen.value = "";
+            }
             else{
                 screen.value += key;
             }
         }
 
-        function clear()
+        /*function clear()
         {
             const screen = document.getElementById('input');
-            screen.value = '';
-        }
+            screen.value = "";
+        }*/
     </script>
     
 </body>
